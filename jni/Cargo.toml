@@ -1,0 +1,31 @@
+[package]
+name = "blake3_jni"
+version = "0.3.6"
+authors = ["Eugene Petrenko <me@jonnyzzz.com>"]
+description = "a JNI implementation of the BLAKE3 hash function"
+repository = "https://github.com/BLAKE3-team/BLAKE3"
+license = "CC0-1.0 OR Apache-2.0"
+readme = "README.md"
+edition = "2018"
+
+[features]
+neon = ["blake3/neon"]
+prefer_intrinsics = ["blake3/prefer_intrinsics"]
+pure = ["blake3/pure"]
+
+[dependencies]
+anyhow = "1.0.25"
+blake3 = "0.3"
+clap = "2.33.1"
+hex = "0.4.0"
+memmap = "0.7.0"
+rayon = "1.2.1"
+wild = "2.0.3"
+jni = "0.17.0"
+
+[dev-dependencies]
+duct = "0.13.3"
+tempfile = "3.1.0"
+
+[lib]
+crate_type = ["cdylib"]
